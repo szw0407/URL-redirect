@@ -7,12 +7,11 @@
         alert("Empty Input");
         return;
       }
-      if (u.indexOf("http://") == -1 && u.indexOf("https://") == -1) {
-        u = "http://" + u;
+      if (!u.includes('://') && !u.includes(':')) {
+        u = 'http://' + u;
       }
-      var link = document.createElement("a");
+      var link = document.querySelector("#link");
       link.href = u;
-      document.body.appendChild(link);
     }
   </script>
 </head>
@@ -24,7 +23,7 @@ Then click the link to go to the website.
 </p>
 <input title="URL" type="text" name="url" id="url" />
 <button onclick="func()">go</button>
-<!-- <a id="link" href="javascript:alert('Empty Input')">
+<a id="link" href="javascript:alert('Empty Input')">
   click here to go to your website</a
-> -->
+>
 </body>
