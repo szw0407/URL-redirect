@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+  <title>Redirector</title><script>
+    function func() {
+      var u = document.getElementById("url").value;
+      if (u == "") {
+        alert("Empty Input");
+        return;
+      }
+      if (u.indexOf("http://") == -1 && u.indexOf("https://") == -1) {
+        u = "http://" + u;
+      }
+      var link = document.createElement("a");
+      link.href = u;
+      document.body.appendChild(link);
+    }
+  </script>
+</head>
+<body>
+ 
+ <h1>Input URL into the box and click the go button</h1> 
+<p>
+Then click the link to go to the website.
+</p>
+<input title="URL" type="text" name="url" id="url" />
+<button onclick="func()">go</button>
+<!-- <a id="link" href="javascript:alert('Empty Input')">
+  click here to go to your website</a
+> -->
+</body>
